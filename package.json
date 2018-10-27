@@ -1,0 +1,37 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --watch-content-base --open-page index.html",
+    "build-dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-harddisk-plugin": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.4.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.9.4",
+    "postcss-loader": "^3.0.0",
+    "sass-lint": "^1.12.1",
+    "sass-lint-webpack": "^1.0.0",
+    "sass-loader": "^7.1.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
