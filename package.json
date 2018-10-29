@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --watch-content-base --open-page index.html",
-    "build-dev": "webpack --mode development --watch",
+    "build:dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
   },
   "devDependencies": {
@@ -16,6 +16,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
     "html-webpack-harddisk-plugin": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.4.0",

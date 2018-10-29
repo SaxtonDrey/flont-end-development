@@ -6,8 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const SassLintPlugin = require('sass-lint-webpack')
-
+const SassLintPlugin = require('sass-lint-webpack');
 
 module.exports = (env, argv) =>　{
   const MODE = argv.mode || 'development'
@@ -59,7 +58,13 @@ module.exports = (env, argv) =>　{
                 options: {
                   sourceMap: IS_DEVELOPMENT,
                   plugins: [
-                    require('autoprefixer')({grid: true})
+                    require('autoprefixer')({
+                      browsers: [
+                        'last 2 versions',
+                        'Android >= 4',
+                        'iOS >= 8'
+                      ]
+                    })
                   ]
                 },
               },    
@@ -104,8 +109,12 @@ module.exports = (env, argv) =>　{
                   quality: 75
                 }
               }
-            },
+            }
           ]
+        },
+        {
+          test: /\.html$/,
+          loader: "html-loader"
         }
       ]
     },
@@ -124,6 +133,7 @@ module.exports = (env, argv) =>　{
       ),
       new HtmlWebpackHarddiskPlugin(),
       new SassLintPlugin(),
+      
     ],
     devtool: IS_DEVELOPMENT ? 'source-map' : 'none',
     optimization: {
