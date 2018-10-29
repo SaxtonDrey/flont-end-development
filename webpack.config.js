@@ -58,6 +58,7 @@ module.exports = (env, argv) =>　{
                 options: {
                   sourceMap: IS_DEVELOPMENT,
                   plugins: [
+                    require('cssnano')(IS_DEVELOPMENT ? { preset: null } : { preset: 'default' }),
                     require('autoprefixer')({
                       browsers: [
                         'last 2 versions',
@@ -141,6 +142,7 @@ module.exports = (env, argv) =>　{
       ? []
       : [
         new UglifyJSPlugin({
+          sourceMap: false,
           uglifyOptions: {
             parallel: true,
             compress: {
