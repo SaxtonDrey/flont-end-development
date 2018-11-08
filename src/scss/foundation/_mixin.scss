@@ -1,0 +1,11 @@
+@mixin pc() {
+  @include min-screen($breakpoint) {
+    @content;
+  }
+}
+
+@mixin sp() {
+  @include max-screen($breakpoint - 1px) {
+    @content;
+  }
+}

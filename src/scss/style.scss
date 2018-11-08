@@ -2,6 +2,8 @@
 //  Foundation
 //==========================================================================
 @import "./foundation/vendor";
+@import "./foundation/variables";
+@import "./foundation/mixin";
 // ==========================================================================
 //  Layout
 // ==========================================================================
@@ -20,11 +22,16 @@
 
 // Utility
 // -----------------------------------------------------------------
+
+
+// This is just for example.
 .hello {
-    background-image: url("../img/small.jpg");
-    padding: 100px;
-}
-.hello2 {
-    background-image: url("../img/big.jpg");
-    padding: 1000px;
+     @include pc(){
+        background-image: url("../img/big.jpg");
+        padding: 100px;
+    }
+    @include sp(){
+        background-image: url("../img/small.jpg");
+        padding: 1000px;
+    }
 }
